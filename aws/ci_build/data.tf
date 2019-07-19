@@ -95,7 +95,7 @@ data "aws_iam_policy_document" "unittest_policy" {
       "ec2:CreateNetworkInterfacePermission"
     ]
     resources = [
-      "arn:aws:ec2:ap-northeast-1:${account_id}:network-interface/*",
+      "arn:aws:ec2:ap-northeast-1:${var.account_id}:network-interface/*",
     ]
   }
   statement {
