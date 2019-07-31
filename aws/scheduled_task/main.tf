@@ -46,7 +46,7 @@ resource "aws_iam_role_policy" "scheduled_task_cloudwatch_policy" {
 ## ECS task definition
 
 resource "aws_ecs_task_definition" "scheduled_task" {
-  family                   = "${var.name}-${var.environment}-scheduled-task"
+  family                   = "${var.name}_${var.environment}_scheduled_task"
   container_definitions    = "${var.container_definitions}"
   requires_compatibilities = ["${var.launch_type}"]
   network_mode             = "${var.network_mode}"
