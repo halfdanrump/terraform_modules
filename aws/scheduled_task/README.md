@@ -11,16 +11,20 @@ This module is a slight modification to [this module](https://github.com/rclmene
 
 ``` hcl
 module "scheduled_task" {
-  source  = "github.com:dxw/terraform-aws-ecs-scheduled-task"
+  source  = "github.com/halfdanrump/terraform_modules/aws/scheduled_task"
   version = "1.2"
-
-  name                  = "my_awesome_task"
-  environment           = "staging"
-  container_definitions = "${file(./path/to/container-definitions.json)}"
-  schedule_expression   = "cron(0 * * * ? 0)"
-  cluster_arn           = "my_awesome_cluster"
+  name                  = "zendishes"
+  environment           = "production"
+  network_mode          = "awsvpc"
+  launch_type           = "FARGATE"
+  container_definitions = "${file("task_definitions/task_production.json")}"
+  schedule_expression   = "cron(0/10 * * * ? 0)"
+  cluster_arn           = "${local.persistent_cluster_arn}"
   memory                = "512"
-  cpu                   = "512"
+  cpu                   = "256"
+  subnets               = ["subnet1", "subnet2", ...]
+  security_groups       = ["sg1", "sg2", ...]
+
 }
 ```
 
