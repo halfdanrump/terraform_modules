@@ -18,6 +18,11 @@ variable "schedule_expression" {
   description = "Schedule expression (cron) for when to run task"
 }
 
+variable "log_group_name" {
+  type        = "string"
+  description = "Name of the log group the the task definition has been configured with"
+}
+
 variable "cluster_arn" {
   type        = "string"
   description = "ARN of cluster on which to run task"

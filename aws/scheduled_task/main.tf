@@ -43,6 +43,16 @@ resource "aws_iam_role_policy" "scheduled_task_cloudwatch_policy" {
   policy = "${data.template_file.scheduled_task_cloudwatch_policy.rendered}"
 }
 
+## CloudWatch log group
+resource "aws_cloudwatch_log_group" "task_logs" {
+  name = "${var.log_group_name}"
+  tags = {
+    name = "zendishes production"
+    created_by = "terraform"
+  }
+}
+
+
 ## ECS task definition
 
 resource "aws_ecs_task_definition" "scheduled_task" {
