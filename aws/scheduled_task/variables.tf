@@ -8,6 +8,11 @@ variable "environment" {
   description = "Environment - appended to ${var.name} for resources"
 }
 
+variable "account_id" {
+  type        = "string"
+  description = "Your numeric account id that's part of ARN names"
+}
+
 variable "container_definitions" {
   type        = "string"
   description = "Task container defintions"
