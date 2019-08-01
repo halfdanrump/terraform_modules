@@ -84,6 +84,7 @@ resource "aws_cloudwatch_event_target" "scheduled_task" {
     task_count          = "${var.task_count}"
     task_definition_arn = "${aws_ecs_task_definition.scheduled_task.arn}"
     launch_type         = "${var.launch_type}"
+    platform_version    = "LATEST"
 
      network_configuration {
       subnets         = ["${var.subnets}"]
