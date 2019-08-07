@@ -3,7 +3,7 @@
 resource "aws_cloudwatch_log_group" "task_logs" {
   name = "${var.log_group_name}"
   tags = {
-    name = "zendishes production"
+    name = "${var.name}_${var.environment}"
     created_by = "terraform"
   }
 }
