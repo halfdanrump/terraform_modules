@@ -3,7 +3,7 @@
 A Terraform module to create a scheduled task in AWS ECS
 
 # Credit
-This module is a based on [this module](https://github.com/rclmenezes/terraform-aws-ecs-scheduled-task), which is in turn a fork of [this module](https://github.com/dxw/terraform-aws-ecs-scheduled-task)
+This module is based on [this module](https://github.com/rclmenezes/terraform-aws-ecs-scheduled-task), which is in turn a fork of [this module](https://github.com/dxw/terraform-aws-ecs-scheduled-task)
 
 
 
