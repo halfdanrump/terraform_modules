@@ -5,7 +5,7 @@ variable "name" {
 
 variable "environment" {
   type        = "string"
-  description = "Environment - appended to ${var.name} for resources"
+  description = "Environment - appended to for resources"
 }
 
 variable "account_id" {
@@ -23,9 +23,9 @@ variable "schedule_expression" {
   description = "Schedule expression (cron) for when to run task"
 }
 
-variable "log_group_name" {
-  type        = "string"
-  description = "Name of the log group the the task definition has been configured with"
+variable "log_groups" {
+  type        = "map"
+  description = "A map: {container name -> log_group_name} for each container in the task"
 }
 
 variable "cluster_arn" {
