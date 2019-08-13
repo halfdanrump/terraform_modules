@@ -46,7 +46,8 @@ resource "aws_codepipeline" "deploy_pipeline" {
       type = "KMS"
     }
   }
-  stage = {
+
+  stage {
     name = "Source"
     action = {
       name = "DownloadSource"
@@ -65,7 +66,8 @@ resource "aws_codepipeline" "deploy_pipeline" {
       version = 1
     }
   }
-  stage = {
+
+  stage {
     name = "RunTests"
     action = {
       category = "Test"
@@ -80,7 +82,8 @@ resource "aws_codepipeline" "deploy_pipeline" {
       version = 1
     }
   }
-  stage = {
+
+  stage {
     name = "BuildImage"
     action = {
       category = "Build"
@@ -96,7 +99,6 @@ resource "aws_codepipeline" "deploy_pipeline" {
       version = 1
     }
   }
-
 }
 
 /*
