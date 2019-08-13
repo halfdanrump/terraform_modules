@@ -93,7 +93,7 @@ resource "aws_codebuild_project" "dockerbuild" {
     location              = "http://github.com/${var.git_organization}/${var.git_repo}/tree/${var.git_branch}"
     buildspec             = "${var.dockerbuild_buildspec_path}"
     git_clone_depth       = 1
-    report_build_status   = false
+    # report_build_status   = false
     insecure_ssl          = false
     report_build_status   = false
   }
@@ -160,7 +160,7 @@ resource "aws_codebuild_project" "unittest" {
     location              = "http://github.com/${var.git_organization}/${var.git_repo}/tree/${var.git_branch}"
     buildspec             = "${var.unittest_buildspec_path}"
     git_clone_depth       = 1
-    report_build_status   = false
+    # report_build_status   = false
     insecure_ssl          = false
     report_build_status   = false
   }
